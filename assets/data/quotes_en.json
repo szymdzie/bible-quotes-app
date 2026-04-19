@@ -1,0 +1,244 @@
+{
+  "quotes": [
+    {
+      "id": "en_anger_1",
+      "text": "In your anger do not sin: Do not let the sun go down while you are still angry.",
+      "reference": "Ephesians 4:26",
+      "mood": "anger",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anger_2",
+      "text": "Whoever is patient has great understanding, but one who is quick-tempered displays folly.",
+      "reference": "Proverbs 14:29",
+      "mood": "anger",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anger_3",
+      "text": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+      "reference": "Proverbs 15:1",
+      "mood": "anger",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anger_4",
+      "text": "My dear brothers and sisters, take note of this: Everyone should be quick to listen, slow to speak and slow to become angry.",
+      "reference": "James 1:19",
+      "mood": "anger",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anger_5",
+      "text": "But now you must also rid yourselves of all such things as these: anger, rage, malice, slander, and filthy language from your lips.",
+      "reference": "Colossians 3:8",
+      "mood": "anger",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_lonely_1",
+      "text": "So do not fear, for I am with you; do not be dismayed, for I am your God.",
+      "reference": "Isaiah 41:10",
+      "mood": "loneliness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_lonely_2",
+      "text": "And surely I am with you always, to the very end of the age.",
+      "reference": "Matthew 28:20",
+      "mood": "loneliness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_lonely_3",
+      "text": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+      "reference": "Psalm 34:18",
+      "mood": "loneliness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_lonely_4",
+      "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me.",
+      "reference": "Psalm 23:4",
+      "mood": "loneliness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_lonely_5",
+      "text": "For where two or three gather in my name, there am I with them.",
+      "reference": "Matthew 18:20",
+      "mood": "loneliness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anxiety_1",
+      "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+      "reference": "Philippians 4:6",
+      "mood": "anxiety",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anxiety_2",
+      "text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+      "reference": "Philippians 4:7",
+      "mood": "anxiety",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anxiety_3",
+      "text": "Cast all your anxiety on him because he cares for you.",
+      "reference": "1 Peter 5:7",
+      "mood": "anxiety",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anxiety_4",
+      "text": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+      "reference": "Matthew 6:33",
+      "mood": "anxiety",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_anxiety_5",
+      "text": "The Lord is my shepherd, I lack nothing.",
+      "reference": "Psalm 23:1",
+      "mood": "anxiety",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_sadness_1",
+      "text": "Blessed are those who mourn, for they will be comforted.",
+      "reference": "Matthew 5:4",
+      "mood": "sadness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_sadness_2",
+      "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain.",
+      "reference": "Revelation 21:4",
+      "mood": "sadness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_sadness_3",
+      "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
+      "reference": "Matthew 11:28",
+      "mood": "sadness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_sadness_4",
+      "text": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+      "reference": "John 11:25",
+      "mood": "sadness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_sadness_5",
+      "text": "Weeping may stay for the night, but rejoicing comes in the morning.",
+      "reference": "Psalm 30:5",
+      "mood": "sadness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_happy_1",
+      "text": "Rejoice in the Lord always. I will say it again: Rejoice!",
+      "reference": "Philippians 4:4",
+      "mood": "happiness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_happy_2",
+      "text": "The Lord gave and the Lord has taken away; may the name of the Lord be praised.",
+      "reference": "Job 1:21",
+      "mood": "happiness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_happy_3",
+      "text": "The joy of the Lord is your strength.",
+      "reference": "Nehemiah 8:10",
+      "mood": "happiness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_happy_4",
+      "text": "Blessed are the people who know the joyful sound!",
+      "reference": "Psalm 89:15",
+      "mood": "happiness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_happy_5",
+      "text": "Be joyful in hope, patient in affliction, faithful in prayer.",
+      "reference": "Romans 12:12",
+      "mood": "happiness",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_gratitude_1",
+      "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+      "reference": "Psalm 107:1",
+      "mood": "gratitude",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_gratitude_2",
+      "text": "Give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+      "reference": "1 Thessalonians 5:18",
+      "mood": "gratitude",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_gratitude_3",
+      "text": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
+      "reference": "Psalm 100:4",
+      "mood": "gratitude",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_gratitude_4",
+      "text": "Praise be to the Lord God, the God of Israel, who alone does marvelous deeds.",
+      "reference": "Psalm 72:18",
+      "mood": "gratitude",
+      "language": "en",
+      "translation": "NIV"
+    },
+    {
+      "id": "en_gratitude_5",
+      "text": "And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.",
+      "reference": "Colossians 3:17",
+      "mood": "gratitude",
+      "language": "en",
+      "translation": "NIV"
+    }
+  ]
+}

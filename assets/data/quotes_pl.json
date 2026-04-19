@@ -1,0 +1,244 @@
+{
+  "quotes": [
+    {
+      "id": "pl_anger_1",
+      "text": "Gniewajcie się, a nie grzeszcie: niech nie zachodzi słońce nad gniewem waszym.",
+      "reference": "Ef 4,26",
+      "mood": "anger",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anger_2",
+      "text": "Powolny do gniewu ma wielką rozumnosć, lecz ten, co się spieszy gniewać, wysławia głupotę.",
+      "reference": "Prz 14,29",
+      "mood": "anger",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anger_3",
+      "text": "Miękka odpowiedź powstrzymuje zapalczywość, a słowo druzgocące podnosi gniew.",
+      "reference": "Prz 15,1",
+      "mood": "anger",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anger_4",
+      "text": "Czyńcie sobie przyjaciół z mamoną niesprawiedliwości, aby was przyjęła, gdy jej zabraknie.",
+      "reference": "Łk 16,9",
+      "mood": "anger",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anger_5",
+      "text": "Każdy, kto się gniewa na brata swego, podlega sądowi.",
+      "reference": "Mt 5,22",
+      "mood": "anger",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_lonely_1",
+      "text": "Nie lękajcie się, bo Jam jest z wami; nie trwóżcie się, bo Ja jestem Bogiem waszym.",
+      "reference": "Iz 41,10",
+      "mood": "loneliness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_lonely_2",
+      "text": "Jam jest przy tobie we wszystkich dniach aż do skończenia świata.",
+      "reference": "Mt 28,20",
+      "mood": "loneliness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_lonely_3",
+      "text": "Pan bliski jest strwojonym sercom i utrapionym w duchu zbawia.",
+      "reference": "Ps 34,19",
+      "mood": "loneliness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_lonely_4",
+      "text": "Chociażbym chodził ciemną doliną, zła się nie ulęknę, bo Ty jesteś ze mną.",
+      "reference": "Ps 23,4",
+      "mood": "loneliness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_lonely_5",
+      "text": "Ja i Ojciec jedno jesteśmy.",
+      "reference": "J 10,30",
+      "mood": "loneliness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anxiety_1",
+      "text": "O wszystkim zawiadamiajcie Boga w modlitwie i prośbie, z dziękczynieniem.",
+      "reference": "Flp 4,6",
+      "mood": "anxiety",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anxiety_2",
+      "text": "A pokój Boży, który przewyższa wszelki rozum, strzec będzie serc waszych.",
+      "reference": "Flp 4,7",
+      "mood": "anxiety",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anxiety_3",
+      "text": "Wszystką troskę waszą złóżcie na Niego, albowiem Jemu zależy na was.",
+      "reference": "1P 5,7",
+      "mood": "anxiety",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anxiety_4",
+      "text": "Szukajcie najpierw królestwa Bożego i sprawiedliwości Jego, a wszystko inne będzie wam dodane.",
+      "reference": "Mt 6,33",
+      "mood": "anxiety",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_anxiety_5",
+      "text": "Pan jest pasterzem moim, nie brak mi niczego.",
+      "reference": "Ps 23,1",
+      "mood": "anxiety",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_sadness_1",
+      "text": "Błogosławieni, którzy płaczą, albowiem oni pocieszeni będą.",
+      "reference": "Mt 5,4",
+      "mood": "sadness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_sadness_2",
+      "text": "Pan bliski jest strwojonym sercom i utrapionym w duchu zbawia.",
+      "reference": "Ps 34,19",
+      "mood": "sadness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_sadness_3",
+      "text": "On wyciera wszelką łzę z oczu ich.",
+      "reference": "Ap 21,4",
+      "mood": "sadness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_sadness_4",
+      "text": "Przyjdźcie do Mnie wszyscy, którzy utrudzeni i obciążeni jesteście, a Ja was pokrzepię.",
+      "reference": "Mt 11,28",
+      "mood": "sadness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_sadness_5",
+      "text": "Jam jest zmartwychwstanie i życie. Kto wierzy we Mnie, choćby i umarł, żyć będzie.",
+      "reference": "J 11,25",
+      "mood": "sadness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_happy_1",
+      "text": "Weselcie się zawsze w Panu; jeszcze raz powtarzam: weselcie się!",
+      "reference": "Flp 4,4",
+      "mood": "happiness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_happy_2",
+      "text": "Pan dał, Pan wziął, niech będzie imię Pańskie błogosławione.",
+      "reference": "Hi 1,21",
+      "mood": "happiness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_happy_3",
+      "text": "Radość Pana jest waszą siłą.",
+      "reference": "Neh 8,10",
+      "mood": "happiness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_happy_4",
+      "text": "Błogosławiony lud, który umie się radować.",
+      "reference": "Ps 89,16",
+      "mood": "happiness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_happy_5",
+      "text": "Radujcie się z nadziei, cierpliwi w ucisku, wytrwali na modlitwie.",
+      "reference": "Rz 12,12",
+      "mood": "happiness",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_gratitude_1",
+      "text": "Dziękujcie Panu, bo jest dobry, bo trwa na wieki Jego łaska.",
+      "reference": "Ps 107,1",
+      "mood": "gratitude",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_gratitude_2",
+      "text": "W każdym położeniu dziękujcie.",
+      "reference": "1Tes 5,18",
+      "mood": "gratitude",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_gratitude_3",
+      "text": "Wchodźcie w bramy Jego z dziękczynieniem, w przedsionki Jego z pieśnią chwały.",
+      "reference": "Ps 100,4",
+      "mood": "gratitude",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_gratitude_4",
+      "text": "Błogosławiony Pan, Bóg Izraela, który czyni cuda.",
+      "reference": "Ps 72,18",
+      "mood": "gratitude",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "pl_gratitude_5",
+      "text": "Cokolwiek czynicie w mowie albo w uczynku, wszystko w imię Pana Jezusa.",
+      "reference": "Kol 3,17",
+      "mood": "gratitude",
+      "language": "pl",
+      "translation": "Biblia Tysiąclecia"
+    }
+  ]
+}
