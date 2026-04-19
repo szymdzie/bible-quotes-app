@@ -65,70 +65,17 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
       
-      - name: Regenerate Android platform files
+      - name: Generate missing Android files (gradlew, wrapper)
         run: flutter create --org com.biblequotes --project-name bible_quotes --platforms android .
       
-      - name: Restore correct Android config
+      - name: Restore repo Android configs
         run: |
+          git checkout -- android/app/build.gradle android/build.gradle android/settings.gradle
           rm -rf android/app/src/main/kotlin/com/biblequotes/bible_quotes || true
-          cat > android/app/build.gradle << 'BUILDGRADLE'
-          plugins {
-              id "com.android.application"
-              id "kotlin-android"
-              id "dev.flutter.flutter-gradle-plugin"
-          }
-
-          def localProperties = new Properties()
-          def localPropertiesFile = rootProject.file("local.properties")
-          if (localPropertiesFile.exists()) {
-              localPropertiesFile.withReader("UTF-8") { reader ->
-                  localProperties.load(reader)
-              }
-          }
-
-          def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
-          if (flutterVersionCode == null) {
-              flutterVersionCode = "1"
-          }
-
-          def flutterVersionName = localProperties.getProperty("flutter.versionName")
-          if (flutterVersionName == null) {
-              flutterVersionName = "1.0"
-          }
-
-          android {
-              namespace "com.biblequotes.app"
-              compileSdk flutter.compileSdkVersion
-              ndkVersion flutter.ndkVersion
-
-              compileOptions {
-                  sourceCompatibility JavaVersion.VERSION_1_8
-                  targetCompatibility JavaVersion.VERSION_1_8
-              }
-
-              kotlinOptions {
-                  jvmTarget = "1.8"
-              }
-
-              defaultConfig {
-                  applicationId "com.biblequotes.app"
-                  minSdk flutter.minSdkVersion
-                  targetSdk flutter.targetSdkVersion
-                  versionCode flutterVersionCode.toInteger()
-                  versionName flutterVersionName
-              }
-
-              buildTypes {
-                  release {
-                      signingConfig signingConfigs.debug
-                  }
-              }
-          }
-
-          flutter {
-              source "../.."
-          }
-          BUILDGRADLE
+          echo "--- android/app/build.gradle namespace ---"
+          grep namespace android/app/build.gradle
+          echo "--- android/settings.gradle plugins ---"
+          grep -A3 "^plugins" android/settings.gradle
       
       - name: Install dependencies
         run: flutter pub get
