@@ -81,7 +81,17 @@ jobs:
         run: flutter pub get
       
       - name: Build APK
-        run: flutter build apk --release --no-tree-shake-icons
+        run: |
+          flutter build apk --release --no-tree-shake-icons 2>&1 | tee /tmp/build_output.txt
+          exit ${PIPESTATUS[0]}
+      
+      - name: Show build error (if failed)
+        if: failure()
+        run: |
+          echo "=== LAST 80 LINES OF BUILD OUTPUT ==="
+          tail -80 /tmp/build_output.txt || true
+          echo "=== GRADLE ERROR LOG ==="
+          find android -name "*.log" -exec sh -c 'echo "--- {} ---"; tail -30 "{}"' \; 2>/dev/null || true
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
