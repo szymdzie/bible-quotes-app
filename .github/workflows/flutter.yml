@@ -68,9 +68,13 @@ jobs:
       - name: Regenerate Android platform files
         run: flutter create --org com.biblequotes --project-name bible_quotes --platforms android .
       
-      - name: Fix applicationId
+      - name: Fix namespace and applicationId
         run: |
+          sed -i 's/namespace "com.biblequotes.bible_quotes"/namespace "com.biblequotes.app"/g' android/app/build.gradle || true
           sed -i 's/applicationId "com.biblequotes.bible_quotes"/applicationId "com.biblequotes.app"/g' android/app/build.gradle || true
+          rm -rf android/app/src/main/kotlin/com/biblequotes/bible_quotes || true
+          echo "=== build.gradle android block ==="
+          grep -A5 "namespace\|applicationId" android/app/build.gradle || true
       
       - name: Install dependencies
         run: flutter pub get
