@@ -65,17 +65,21 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
       
-      - name: Generate missing Android files (gradlew, wrapper)
+      - name: Generate Android platform files
         run: flutter create --org com.biblequotes --project-name bible_quotes --platforms android .
       
-      - name: Restore repo Android configs
+      - name: Fix Android package name
         run: |
-          git checkout -- android/app/build.gradle android/build.gradle android/settings.gradle
+          # Replace all occurrences of generated package with our actual package
+          sed -i 's/com\.biblequotes\.bible_quotes/com.biblequotes.app/g' android/app/build.gradle
+          # Remove duplicate MainActivity if created
           rm -rf android/app/src/main/kotlin/com/biblequotes/bible_quotes || true
-          echo "--- android/app/build.gradle namespace ---"
-          grep namespace android/app/build.gradle
-          echo "--- android/settings.gradle plugins ---"
-          grep -A3 "^plugins" android/settings.gradle
+          echo "=== Verify build.gradle ==="
+          grep -E "namespace|applicationId" android/app/build.gradle
+          echo "=== Verify settings.gradle versions ==="
+          grep -E "version" android/settings.gradle
+          echo "=== Verify gradle-wrapper ==="
+          cat android/gradle/wrapper/gradle-wrapper.properties
       
       - name: Install dependencies
         run: flutter pub get
