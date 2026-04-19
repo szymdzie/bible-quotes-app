@@ -122,9 +122,12 @@ class _QuoteScreenState extends State<QuoteScreen>
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: isDark
-                        ? [const Color(0xFF1A1228), const Color(0xFF0D0D1A)]
-                        : [moodColor.withOpacity(0.08), Colors.white],
+                    colors: [
+                      Color.lerp(const Color(0xFF2D1B4E), moodColor, 0.15)!,
+                      const Color(0xFF1A0F2E),
+                      Color.lerp(const Color(0xFF120B22), moodColor, 0.05)!,
+                    ],
+                    stops: const [0.0, 0.5, 1.0],
                   ),
                 ),
                 child: CustomPaint(
@@ -170,30 +173,30 @@ class _QuoteScreenState extends State<QuoteScreen>
               height: 42,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: widget.mood.color.withOpacity(0.12),
-                border: Border.all(color: widget.mood.color.withOpacity(0.25)),
+                color: Colors.white.withOpacity(0.08),
+                border: Border.all(color: Colors.white.withOpacity(0.15)),
               ),
               child: Icon(Icons.arrow_back_ios_new_rounded,
-                  color: widget.mood.color, size: 18),
+                  color: Colors.white.withOpacity(0.8), size: 18),
             ),
           ),
           const Spacer(),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: widget.mood.color.withOpacity(0.15),
+              color: widget.mood.color.withOpacity(0.2),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: widget.mood.color.withOpacity(0.3)),
+              border: Border.all(color: widget.mood.color.withOpacity(0.35)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(widget.mood.icon, color: widget.mood.color, size: 18),
+                Icon(widget.mood.icon, color: Colors.white.withOpacity(0.9), size: 18),
                 const SizedBox(width: 6),
                 Text(
                   isPolish ? widget.mood.displayName : widget.mood.displayNameEn,
                   style: TextStyle(
-                    color: widget.mood.color,
+                    color: Colors.white.withOpacity(0.9),
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
                   ),
@@ -281,9 +284,7 @@ class _QuoteScreenState extends State<QuoteScreen>
                   padding: const EdgeInsets.all(28),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(28),
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? const Color(0xFF1E1E2E).withOpacity(0.95)
-                        : Colors.white.withOpacity(0.95),
+                    color: const Color(0xFF1E1235).withOpacity(0.85),
                     border: Border.all(
                       color: widget.mood.color.withOpacity(0.2),
                       width: 1.5,
@@ -556,7 +557,7 @@ class _OrbPainter extends CustomPainter {
     ];
 
     final radii = [size.width * 0.35, size.width * 0.28, size.width * 0.25];
-    final opacities = isDark ? [0.12, 0.09, 0.07] : [0.08, 0.06, 0.05];
+    final opacities = [0.15, 0.12, 0.09];
 
     for (int i = 0; i < orbs.length; i++) {
       final paint = Paint()

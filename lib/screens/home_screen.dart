@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/mood.dart';
@@ -70,17 +71,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: isDark
-                ? [const Color(0xFF1A1228), const Color(0xFF0F0F1A)]
-                : [const Color(0xFFF5F0FF), const Color(0xFFFFFFFF)],
+            colors: [
+              Color(0xFF2D1B4E),
+              Color(0xFF1A0F2E),
+              Color(0xFF120B22),
+            ],
+            stops: [0.0, 0.6, 1.0],
           ),
         ),
-        child: SafeArea(
-          child: CustomScrollView(
+        child: Stack(
+          children: [
+            CustomPaint(size: Size.infinite, painter: _StarsPainter()),
+            SafeArea(
+              child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(child: _buildHeader(context, isPolish, isDark)),
               SliverPadding(
@@ -126,6 +133,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ],
           ),
         ),
+          ],
+        ),
       ),
     );
   }
@@ -145,12 +154,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF6B4E71), Color(0xFF9B7BA0)],
+                    colors: [Color(0xFF7B5EA7), Color(0xFFB794D6)],
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF6B4E71).withOpacity(0.4),
-                      blurRadius: 12,
+                      color: const Color(0xFF7B5EA7).withOpacity(0.5),
+                      blurRadius: 16,
                       offset: const Offset(0, 4),
                     ),
                   ],
@@ -163,15 +172,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isPolish ? 'Witaj 👋' : 'Hello 👋',
+                      isPolish ? 'Witaj ✨' : 'Hello ✨',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: isDark ? Colors.white54 : Colors.grey.shade500,
+                            color: const Color(0xFFB794D6),
                           ),
                     ),
                     Text(
                       isPolish ? 'Znajdź inspirację' : 'Find inspiration',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w700,
+                            color: Colors.white,
                           ),
                     ),
                   ],
@@ -227,9 +237,10 @@ class _SettingsButtonState extends State<_SettingsButton>
             height: 44,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.6),
+              color: Colors.white.withOpacity(0.08),
+              border: Border.all(color: Colors.white.withOpacity(0.12)),
             ),
-            child: const Icon(Icons.settings_rounded, size: 22),
+            child: Icon(Icons.settings_rounded, size: 22, color: Colors.white.withOpacity(0.7)),
           ),
         ),
       ),
@@ -270,7 +281,6 @@ class _MoodCardState extends State<_MoodCard> with SingleTickerProviderStateMixi
   @override
   Widget build(BuildContext context) {
     final mood = widget.mood;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return GestureDetector(
       onTapDown: (_) {
@@ -297,88 +307,107 @@ class _MoodCardState extends State<_MoodCard> with SingleTickerProviderStateMixi
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        mood.color.withOpacity(_pressed ? 0.35 : 0.2),
-                        mood.color.withOpacity(_pressed ? 0.15 : 0.08),
-                      ]
-                    : [
-                        mood.color.withOpacity(_pressed ? 0.25 : 0.12),
-                        mood.color.withOpacity(_pressed ? 0.12 : 0.05),
-                      ],
+                colors: [
+                  mood.color.withOpacity(_pressed ? 0.4 : 0.22),
+                  const Color(0xFF2A1545).withOpacity(_pressed ? 0.9 : 0.7),
+                ],
               ),
               border: Border.all(
-                color: mood.color.withOpacity(_pressed ? 0.7 : 0.3),
-                width: _pressed ? 2.5 : 1.5,
+                color: mood.color.withOpacity(_pressed ? 0.6 : 0.25),
+                width: _pressed ? 2 : 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: mood.color.withOpacity(_pressed ? 0.4 : 0.15),
-                  blurRadius: _pressed ? 20 : 8,
-                  offset: const Offset(0, 4),
-                  spreadRadius: _pressed ? 2 : 0,
+                  color: mood.color.withOpacity(_pressed ? 0.5 : 0.2),
+                  blurRadius: _pressed ? 24 : 12,
+                  offset: const Offset(0, 6),
+                  spreadRadius: _pressed ? 3 : 0,
+                ),
+                BoxShadow(
+                  color: const Color(0xFF7B5EA7).withOpacity(0.08),
+                  blurRadius: 30,
                 ),
               ],
             ),
-            child: Stack(
-              children: [
-                Positioned(
-                  top: -20,
-                  right: -20,
-                  child: Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: mood.color.withOpacity(0.07),
-                    ),
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 64,
-                      height: 64,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: -30,
+                    right: -30,
+                    child: Container(
+                      width: 100,
+                      height: 100,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: RadialGradient(
                           colors: [
-                            mood.color.withOpacity(0.35),
-                            mood.color.withOpacity(0.1),
+                            mood.color.withOpacity(0.15),
+                            mood.color.withOpacity(0),
                           ],
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: mood.color.withOpacity(0.3),
-                            blurRadius: 14,
-                            spreadRadius: 1,
-                          ),
-                        ],
                       ),
-                      child: Icon(mood.icon, size: 32, color: mood.color),
                     ),
-                    const SizedBox(height: 14),
-                    Text(
-                      widget.isPolish ? mood.displayName : mood.displayNameEn,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: mood.color,
-                            letterSpacing: 0.3,
-                          ),
-                    ),
-                    const SizedBox(height: 6),
-                    Container(
-                      width: 30,
-                      height: 3,
+                  ),
+                  Positioned(
+                    bottom: -20,
+                    left: -20,
+                    child: Container(
+                      width: 60,
+                      height: 60,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2),
-                        color: mood.color.withOpacity(0.4),
+                        shape: BoxShape.circle,
+                        color: Colors.white.withOpacity(0.03),
                       ),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 64,
+                        height: 64,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: RadialGradient(
+                            colors: [
+                              mood.color.withOpacity(0.45),
+                              mood.color.withOpacity(0.08),
+                            ],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: mood.color.withOpacity(0.5),
+                              blurRadius: 20,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Icon(mood.icon, size: 32, color: Colors.white.withOpacity(0.9)),
+                      ),
+                      const SizedBox(height: 14),
+                      Text(
+                        widget.isPolish ? mood.displayName : mood.displayNameEn,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white.withOpacity(0.9),
+                              letterSpacing: 0.3,
+                            ),
+                      ),
+                      const SizedBox(height: 6),
+                      Container(
+                        width: 30,
+                        height: 3,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(2),
+                          color: mood.color.withOpacity(0.5),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -419,4 +448,28 @@ PageRoute _fadeScaleRoute(Widget page) {
     },
     transitionDuration: const Duration(milliseconds: 400),
   );
+}
+
+class _StarsPainter extends CustomPainter {
+  final Random _rng = Random(77);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (int i = 0; i < 60; i++) {
+      final x = _rng.nextDouble() * size.width;
+      final y = _rng.nextDouble() * size.height;
+      final r = _rng.nextDouble() * 1.5 + 0.3;
+      final o = _rng.nextDouble() * 0.5 + 0.1;
+      canvas.drawCircle(
+        Offset(x, y),
+        r,
+        Paint()
+          ..color = Colors.white.withOpacity(o)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 0.8),
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

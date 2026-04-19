@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
       CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
     );
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 35; i++) {
       _particles.add(_Particle(random: _random));
     }
 
@@ -102,11 +102,12 @@ class _SplashScreenState extends State<SplashScreen>
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFF2D1B4E),
-              Color(0xFF6B4E71),
-              Color(0xFF4A3060),
+              Color(0xFF1A0F33),
+              Color(0xFF3D1F6D),
+              Color(0xFF2A1545),
+              Color(0xFF120B22),
             ],
-            stops: [0.0, 0.5, 1.0],
+            stops: [0.0, 0.35, 0.7, 1.0],
           ),
         ),
         child: Stack(
@@ -334,9 +335,11 @@ class _ParticlePainter extends CustomPainter {
 
       if (currentY < -0.05) continue;
 
+      final isGolden = p.x.hashCode % 3 == 0;
+      final baseColor = isGolden ? const Color(0xFFFFD700) : Colors.white;
       final paint = Paint()
-        ..color = Colors.white.withOpacity(p.opacity * (1 - max(0, -currentY * 10)))
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1.5);
+        ..color = baseColor.withOpacity(p.opacity * (1 - max(0, -currentY * 10)))
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, isGolden ? 2.5 : 1.5);
 
       canvas.drawCircle(
         Offset(currentX * size.width, currentY * size.height),
