@@ -1,29 +1,12 @@
 import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/quote.dart';
 import '../models/user.dart';
 
 class FirebaseService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final Random _random = Random();
 
   Future<Quote?> getRandomQuote(String mood, String language) async {
-    try {
-      final querySnapshot = await _firestore
-          .collection('quotes')
-          .where('mood', isEqualTo: mood)
-          .where('language', isEqualTo: language)
-          .get();
-
-      if (querySnapshot.docs.isEmpty) {
-        return getRandomQuoteFallback(mood, language);
-      }
-
-      final randomIndex = _random.nextInt(querySnapshot.docs.length);
-      return Quote.fromFirestore(querySnapshot.docs[randomIndex]);
-    } catch (e) {
-      return getRandomQuoteFallback(mood, language);
-    }
+    return getRandomQuoteFallback(mood, language);
   }
 
   Quote? getRandomQuoteFallback(String mood, String language) {
@@ -143,21 +126,9 @@ class FirebaseService {
   }
 
   Future<void> saveUser(AppUser user) async {
-    await _firestore.collection('users').doc(user.uid).set(user.toFirestore());
   }
 
   Future<AppUser?> getUser(String uid) async {
-    final doc = await _firestore.collection('users').doc(uid).get();
-    if (doc.exists) {
-      return AppUser.fromFirestore(doc);
-    }
     return null;
-  }
-
-  Future<void> updateUserLastActive(String uid) async {
-    await _firestore
-        .collection('users')
-        .doc(uid)
-        .update({'lastActive': Timestamp.fromDate(DateTime.now())});
   }
 }

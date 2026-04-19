@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class AppUser {
   final String uid;
   final String name;
@@ -19,26 +17,22 @@ class AppUser {
     this.preferences = const {},
   });
 
-  factory AppUser.fromFirestore(DocumentSnapshot doc) {
-    final data = doc.data() as Map<String, dynamic>;
+  factory AppUser.fromMap(Map<String, dynamic> data, String uid) {
     return AppUser(
-      uid: doc.id,
+      uid: uid,
       name: data['name'] ?? '',
       email: data['email'] ?? '',
       language: data['language'] ?? 'pl',
-      createdAt: data['createdAt']?.toDate() ?? DateTime.now(),
-      lastActive: data['lastActive']?.toDate(),
+      createdAt: DateTime.now(),
       preferences: data['preferences'] ?? {},
     );
   }
 
-  Map<String, dynamic> toFirestore() {
+  Map<String, dynamic> toMap() {
     return {
       'name': name,
       'email': email,
       'language': language,
-      'createdAt': Timestamp.fromDate(createdAt),
-      'lastActive': lastActive != null ? Timestamp.fromDate(lastActive!) : null,
       'preferences': preferences,
     };
   }

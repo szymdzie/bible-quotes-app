@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -16,13 +15,6 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
-  try {
-    await Firebase.initializeApp();
-  } catch (e) {
-    // Firebase not configured - app will work with fallback data
-    debugPrint('Firebase not initialized: $e');
-  }
 
   runApp(const BibleQuotesApp());
 }

@@ -2,7 +2,6 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
@@ -61,37 +60,4 @@ flutter {
 }
 
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:32.7.0')
-    implementation 'com.google.firebase:firebase-analytics'
-}
-
-// Check for google-services.json and create placeholder if missing for CI
-def googleServicesFile = file("google-services.json")
-if (!googleServicesFile.exists()) {
-    // Create minimal placeholder for CI builds without Firebase config
-    googleServicesFile.text = '''{
-  "project_info": {
-    "project_number": "000000000000",
-    "project_id": "placeholder",
-    "storage_bucket": "placeholder.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-        "android_client_info": {
-          "package_name": "com.biblequotes.app"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [{"current_key": "placeholder"}],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
-}'''
 }

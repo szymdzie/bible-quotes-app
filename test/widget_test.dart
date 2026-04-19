@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bible_quotes/models/mood.dart';
 import 'package:bible_quotes/models/quote.dart';
+import 'package:bible_quotes/models/user.dart';
 
 void main() {
   group('Mood Model Tests', () {

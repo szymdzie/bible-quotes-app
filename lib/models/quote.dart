@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class Quote {
   final String id;
   final String text;
@@ -21,21 +19,19 @@ class Quote {
     this.createdAt,
   });
 
-  factory Quote.fromFirestore(DocumentSnapshot doc) {
-    final data = doc.data() as Map<String, dynamic>;
+  factory Quote.fromMap(Map<String, dynamic> data, String id) {
     return Quote(
-      id: doc.id,
+      id: id,
       text: data['text'] ?? '',
       reference: data['reference'] ?? '',
       mood: data['mood'] ?? '',
       language: data['language'] ?? '',
       translation: data['translation'] ?? '',
       backgroundImage: data['backgroundImage'],
-      createdAt: data['createdAt']?.toDate(),
     );
   }
 
-  Map<String, dynamic> toFirestore() {
+  Map<String, dynamic> toMap() {
     return {
       'text': text,
       'reference': reference,
@@ -43,7 +39,6 @@ class Quote {
       'language': language,
       'translation': translation,
       'backgroundImage': backgroundImage,
-      'createdAt': createdAt != null ? Timestamp.fromDate(createdAt!) : null,
     };
   }
 }
