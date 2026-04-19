@@ -17,7 +17,12 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  await Firebase.initializeApp();
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    // Firebase not configured - app will work with fallback data
+    debugPrint('Firebase not initialized: $e');
+  }
 
   runApp(const BibleQuotesApp());
 }
