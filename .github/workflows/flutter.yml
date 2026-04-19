@@ -66,18 +66,18 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
       
+      - name: Install dependencies
+        run: flutter pub get
+      
       - name: Setup Android local.properties
         run: |
-          echo "flutter.sdk=${FLUTTER_ROOT}" > android/local.properties
+          echo "flutter.sdk=/opt/hostedtoolcache/flutter/stable-3.19.0-x64" > android/local.properties
           echo "flutter.buildMode=release" >> android/local.properties
           echo "flutter.versionName=1.0.0" >> android/local.properties
           echo "flutter.versionCode=1" >> android/local.properties
       
-      - name: Install dependencies
-        run: flutter pub get
-      
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --release --no-tree-shake-icons
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -107,4 +107,4 @@ jobs:
           pod install --repo-update || true
       
       - name: Build iOS (no codesign)
-        run: flutter build ios --release --no-codesign
+        run: flutter build ios --release --no-codesign --no-tree-shake-icons
