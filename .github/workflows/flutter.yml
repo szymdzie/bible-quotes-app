@@ -66,6 +66,13 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
       
+      - name: Setup Android local.properties
+        run: |
+          echo "flutter.sdk=${FLUTTER_ROOT}" > android/local.properties
+          echo "flutter.buildMode=release" >> android/local.properties
+          echo "flutter.versionName=1.0.0" >> android/local.properties
+          echo "flutter.versionCode=1" >> android/local.properties
+      
       - name: Install dependencies
         run: flutter pub get
       
@@ -93,6 +100,11 @@ jobs:
       
       - name: Install dependencies
         run: flutter pub get
+      
+      - name: Setup iOS Pods
+        run: |
+          cd ios
+          pod install --repo-update || true
       
       - name: Build iOS (no codesign)
         run: flutter build ios --release --no-codesign
