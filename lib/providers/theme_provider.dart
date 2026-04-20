@@ -27,7 +27,7 @@ class ThemeProvider extends ChangeNotifier {
         onBackground: Colors.white70,
       ),
       scaffoldBackgroundColor: const Color(0xFF1F1429),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
@@ -80,7 +80,7 @@ class ThemeProvider extends ChangeNotifier {
         onBackground: Colors.white70,
       ),
       scaffoldBackgroundColor: const Color(0xFF120B1F),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 2,
         color: const Color(0xFF1E1235),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
